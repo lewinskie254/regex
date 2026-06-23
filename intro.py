@@ -128,14 +128,20 @@ https://www.nasa.gov
 
 #word_pattern = re.compile(r'[a-zA-z]*\.?[a-zA-Z0-9]+\.[a-zA-Z]+')
 
-word_pattern = re.compile(r'[a-zA-Z0-9]+\.(com|gov)')
+word_pattern = re.compile(r'https?://(www\.)?([a-zA-Z0-9]+)\.(com|gov)')
  
 words = word_pattern.finditer(urls)
 
-for word in words: 
-    print(word)
+# for word in words: 
+#     print(word.group(0))
+#     print(word.group(1))
+#     print(word.group(2))
 
 
+
+subs = word_pattern.sub(r'\2', urls)
+
+print(subs)
 
 # pattern = re.compile(r'\d[\d\.-]*\d')
 # matches = pattern.finditer(text_to_search)
