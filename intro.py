@@ -24,6 +24,15 @@ Mr. T
 
 sentence = 'Start a sentence and then bring it to an end'
 
+# \s - Whitespace (space, tab, \n), \S - Not whitespace, space, tab, \n 
+# \d - (0 - 9), \D not a digit 
+# \w Word character, \W not  word character (\n, )
+# \b - Word boundary, \B not a word boundary 
+#^ Beginning of a string, $end of a string 
+# [] Matches characters in brackets 
+# [^ ] Matches characters not in brackets 
+# for match in matches:
+
 
 #predominantly we are going to be using raw strings 
 
@@ -59,25 +68,28 @@ with open('data.txt', 'r') as f:
 #=================================
 # Addresses 
 #=================================
-word_pattern = re.compile(r'\d+ \w+ \w+., \w+ \w+ \d+')
+# word_pattern = re.compile(r'\d+ \w+ \w+., \w+ \w+ \d+')
  
-words = word_pattern.finditer(file)
+# words = word_pattern.finditer(file)
 
-for word in words: 
-    print(word)
+# for word in words: 
+#     print(word)
+
+#=================================
+# Names (that needs cleanup to eliminate the last character, and also sorting for 3 names)
+#=================================
+# word_pattern = re.compile(r'\w+ \w+\n\d')
+ 
+# words = word_pattern.finditer(file)
+
+# for word in words: 
+#     print(word)
 
 pattern = re.compile(r'\d[\d\.-]*\d')
 matches = pattern.finditer(text_to_search)
 
 
-# \s - Whitespace (space, tab, \n), \S - Not whitespace, space, tab, \n 
-# \d - (0 - 9), \D not a digit 
-# \w Word character, \W not  word character (\n, )
-# \b - Word boundary, \B not a word boundary 
-#^ Beginning of a string, $end of a string 
-# [] Matches characters in brackets 
-# [^ ] Matches characters not in brackets 
-for match in matches:
-    print(match)
 
-print(text_to_search[slice(1, 4)])
+#     print(match)
+
+# print(text_to_search[slice(1, 4)])
