@@ -79,11 +79,24 @@ with open('data.txt', 'r') as f:
 # Names (that needs cleanup to eliminate the last character, and also sorting for 3 names)
 #=================================
 # word_pattern = re.compile(r'\w+ \w+\n\d')
+#word_pattern = re.compile(r'[a-zA-Z]* [a-zA-Z]*\n\d')
  
 # words = word_pattern.finditer(file)
 
 # for word in words: 
 #     print(word)
+
+#=================================
+# Names with cleaned up output 
+#=================================
+
+# word_pattern = re.compile(r'[a-zA-Z]* [a-zA-Z]*\n\d')
+ 
+# words = word_pattern.finditer(file)
+
+# for word in words: 
+#     to_print = word.group(0).split('\n')[0]
+#     print(to_print)
 
 pattern = re.compile(r'\d[\d\.-]*\d')
 matches = pattern.finditer(text_to_search)
