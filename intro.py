@@ -28,8 +28,45 @@ sentence = 'Start a sentence and then bring it to an end'
 #predominantly we are going to be using raw strings 
 
 # pattern = re.compile(r'[a-z A-Z 0-9]+\.com')
-pattern = re.compile(r'[\w]+\.\s')
+# pattern = re.compile(r'[\w]+\.\s')
 
+with open('data.txt', 'r') as f: 
+    file = f.read()
+
+#=================================
+#phone numbers 
+#=================================
+
+
+# word_pattern = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
+ 
+# words = word_pattern.finditer(file)
+
+# for word in words: 
+#     print(word)
+
+
+#=================================
+# emails 
+#=================================
+# word_pattern = re.compile(r'\w+@\w+\.\w+\b')
+ 
+# words = word_pattern.finditer(file)
+
+# for word in words: 
+#     print(word)
+
+#=================================
+# Addresses 
+#=================================
+word_pattern = re.compile(r'\w+@\w+\.\w+\b')
+ 
+words = word_pattern.finditer(file)
+
+for word in words: 
+    print(word)
+
+pattern = re.compile(r'\d[\d\.-]*\d')
 matches = pattern.finditer(text_to_search)
 
 
