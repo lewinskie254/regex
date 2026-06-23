@@ -39,6 +39,7 @@ sentence = 'Start a sentence and then bring it to an end'
 # [] Matches characters in brackets 
 # [^ ] Matches characters not in brackets 
 # for match in matches:
+# quantifiers : * - 0 or more; + 1 or more; ? 0 or None, {3} exactly 3 or specified Number; {3, 4} a range of 3 to 4 elements or a range {minimum, maximum}
 
 
 #predominantly we are going to be using raw strings 
@@ -107,16 +108,37 @@ with open('data.txt', 'r') as f:
 
 
 
-word_pattern = re.compile(r'[a-zA-Z]a[a-zA-Z]\b')
+# word_pattern = re.compile(r'[a-zA-Z]a[a-zA-Z]\b')
  
-words = word_pattern.finditer(text_to_search)
+# words = word_pattern.finditer(text_to_search)
+
+# for word in words: 
+#     print(word)
+
+#=================================
+#urls 
+#=================================
+
+urls = '''
+https://www.google.com
+https://coreyms.com 
+http://youtube.com
+https://www.nasa.gov
+'''
+
+#word_pattern = re.compile(r'[a-zA-z]*\.?[a-zA-Z0-9]+\.[a-zA-Z]+')
+
+word_pattern = re.compile(r'[a-zA-Z0-9]+\.(com|gov)')
+ 
+words = word_pattern.finditer(urls)
 
 for word in words: 
     print(word)
 
 
-pattern = re.compile(r'\d[\d\.-]*\d')
-matches = pattern.finditer(text_to_search)
+
+# pattern = re.compile(r'\d[\d\.-]*\d')
+# matches = pattern.finditer(text_to_search)
 
 
 
