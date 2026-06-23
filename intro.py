@@ -36,6 +36,10 @@ matches = pattern.finditer(text_to_search)
 # \s - Whitespace (space, tab, \n), \S - Not whitespace, space, tab, \n 
 # \d - (0 - 9), \D not a digit 
 # \w Word character, \W not  word character (\n, )
+# \b - Word boundary, \B not a word boundary 
+#^ Beginning of a string, $end of a string 
+# [] Matches characters in brackets 
+# [^ ] Matches characters not in brackets 
 for match in matches:
     print(match)
 
