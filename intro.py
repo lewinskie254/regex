@@ -59,7 +59,7 @@ with open('data.txt', 'r') as f:
 #=================================
 # Addresses 
 #=================================
-word_pattern = re.compile(r'\w+@\w+\.\w+\b')
+word_pattern = re.compile(r'\d+ \w+ \w+., \w+ \w+ \d+')
  
 words = word_pattern.finditer(file)
 
