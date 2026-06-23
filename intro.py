@@ -20,6 +20,13 @@ Mr Smith
 Ms Davis
 Mrs. Robinson
 Mr. T
+
+cat 
+mat
+pat
+dat
+sat
+
 '''
 
 sentence = 'Start a sentence and then bring it to an end'
@@ -97,6 +104,16 @@ with open('data.txt', 'r') as f:
 # for word in words: 
 #     to_print = word.group(0).split('\n')[0]
 #     print(to_print)
+
+
+
+word_pattern = re.compile(r'[a-zA-Z]a[a-zA-Z]\b')
+ 
+words = word_pattern.finditer(text_to_search)
+
+for word in words: 
+    print(word)
+
 
 pattern = re.compile(r'\d[\d\.-]*\d')
 matches = pattern.finditer(text_to_search)
