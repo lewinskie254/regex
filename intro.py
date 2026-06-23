@@ -8,7 +8,7 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ
 Ha HaHa
 
 MetaCharacters (Need to be escaped):
-. ^ $ * + ? { } [ ] \ | ( )
+. ^ $ * + ? { } [ ] \\ | ( )
 
 coreyms.com
 
@@ -21,3 +21,22 @@ Ms Davis
 Mrs. Robinson
 Mr. T
 '''
+
+sentence = 'Start a sentence and then bring it to an end'
+
+
+#predominantly we are going to be using raw strings 
+
+# pattern = re.compile(r'[a-z A-Z 0-9]+\.com')
+pattern = re.compile(r'\s')
+
+matches = pattern.finditer(text_to_search)
+
+
+# \s - Whitespace, \S - Not whitespace, space, tab 
+# \d - (0 - 9), \D not a digit 
+# \w Word character, \W not  word character (\n, )
+for match in matches:
+    print(match)
+
+print(text_to_search[slice(1, 4)])
